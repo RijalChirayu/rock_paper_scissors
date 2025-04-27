@@ -43,9 +43,18 @@ function playRound(playerChoice , computerChoice){
 }
 
 function playGame(){
+    playerScore = 0;
+    computerScore = 0; 
     let numberOfPlays = Number(window.prompt("How many rounds would you like to play?" , 5));
     for (let i = 0 ; i < numberOfPlays ; i ++){
         playRound(getUserChoice() , getComputerChoice());
+    }
+    if (playerScore === computerScore){
+        alert("The Game ended in Draw");
+    }else if (playerScore > computerScore){
+        alert("Congrats you won warrior!");
+    }else {
+        alert("The computer won the game! Nice try warrior.");
     }
 }
 playGame();
